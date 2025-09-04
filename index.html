@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is my portfolio website. Where you can find my projects, services and about me. Feel free to contact!">
+
+    <!--=============== Favicon ===============-->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--=============== ScrollReveal ===============-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <title>Om Prajapati</title>
+</head>
+<body>
+    <!--=============== Dark Theme Icon ===============-->
+    <div class="dark-theme-div">
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+    </div>
+
+    <!--=============== NAVBAR ===============-->
+    <nav class="nav">
+        <ul class="nav__list">
+            <li>
+                <a href="#home" class="nav__link active-link">
+                    <i class="ri-home-smile-2-line"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#about" class="nav__link">
+                    <i class="ri-user-line"></i>
+                </a>
+            </li>
+
+            <!-- Expand list -->
+            <li>
+                <button class="nav__expand" id="nav-expand">
+                    <i class="ri-add-line nav__expand-icon" id="nav-expand-icon"></i>
+                </button>
+
+                <ul class="nav__expand-list" id="nav-expand-list">
+                    <li>
+                        <a href="#services" class="nav__expand-link">
+                            <i class="ri-service-line"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+      
+                    <li>
+                        <a href="#resume" class="nav__expand-link">
+                            <i class="ri-article-line"></i>
+                            <span>Resume</span>
+                        </a>
+                    </li>
+      
+                    <li>
+                        <a href="#links" class="nav__expand-link">
+                            <i class="ri-links-fill"></i>
+                            <span>Links</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+         
+            <li>
+                <a href="#projects" class="nav__link">
+                    <i class="ri-briefcase-line"></i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" class="nav__link">
+                    <!-- <i class="ri-send-plane-line"></i> -->
+                    <i class="ri-message-3-line"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--==================== MAIN ====================-->
+    <main class="container">
+        <!--=============== Home Section ===============-->
+        <section class="section" id="home">
+            <div class="title-container hm-ttl-cnt">
+                <h1>HOME</h1>
+                <img src="underline.webp" alt="image" class="underline">
+            </div>
+
+            <div class="home-container">
+                <div class="home-txt-container">
+                    <p class="home-txt">Hi,</p>
+                    <p class="home-txt">I am</p>
+
+                    <div class="typing-container">
+                        <p class="typed-txt"></p>
+                        <span class="cursor"></span>
+                    </div>
+                </div>
+
+                <div class="home-img">
+                    <img src="my-img-1.jpg" alt="image" class="my-img">
+                </div>
+            </div>
+        </section>
+
+        <!--=============== About Section ===============-->
+        <section class="section" id="about">
+            <div class="title-container">
+                <h1>ABOUT</h1>
+                <img src="underline.webp" alt="image" class="underline">
+            </div>
+
+            <div class="about-container">
+                <div class="about-img-container">
+                    <img src="my-img-1.jpg" alt="image" class="about-img">
+                    <div class="about-img-shadow"></div>
+                    <div class="about-img-geometric-box"></div>
+                    <div class="about-img-box"></div>
+                </div>
+
+                <div class="about-info-container">
+                        <p class="about-desc-para">
+                            Hello! I'm <b>Om Prajapati</b>, a dedicated <b>Full Stack Developer</b> with a passion for transforming innovative ideas into dynamic web experiences. With expertise in the <b>MERN Stack</b> and modern web technologies, I craft scalable, user-centric applications that seamlessly blend functionality with stunning design. My journey in web development is driven by curiosity, continuous learning, and a commitment to delivering exceptional digital solutions that make a real impact.
+                        </p>
+
+                        <ul class="about-list">
+                            <li class="about-list-item">
+                                <b>My Skills Are:</b> React, Node.js, MongoDB, Express.js,
+                                PHP, Tailwind CSS, Bootstrap, Git & GitHub.
+                            </li>
+                        </ul>
+
+                        <a href="#contact" class="about-contact-btn">
+                            <i class="ri-send-plane-fill"></i> Contact Me
+                        </a>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== Projects Section ===============-->
+        <section class="section" id="projects">
+            <div class="title-container">
+                <h1>PROJECTS</h1>
+                <img src="underline.webp" alt="image" class="underline">
+            </div>
+
+            <div class="projects-container">
+                <article class="projects-card">
+                    <div class="projects-image">
+                        <img src="RecipeWala.png" alt="Projects Image" class="projects-img">
+
+                        <a href="#" target="_blank" class="projects-button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects-content">
+                        <div class="projects-content-txt">
+                            <h3 class="projects-subtitle">Website</h3>
+                            <h2 class="projects-title">RecipeWala</h2>
+    
+                            <p class="projects-description">
+                                AI-powered social recipe sharing platform built with React, Node.js, and MongoDB. Users generate personalized recipes, share collections, follow other users.
+                            </p>
+                        </div>
+
+                        <div class="projects-buttons">
+                            <a href="https://github.com/om2511/RecipeWala" target="_blank" class="projects-link">
+                                <i class="ri-github-fill"></i> View
+                            </a>
+    
+                            <a href="#" target="_blank" class="projects-link">
+                                <i class="ri-global-line"></i> View
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="projects-card">
+                    <div class="projects-image">
+                        <img src="PG-Search.png" alt="Projects Image" class="projects-img">
+
+                        <a href="#" target="_blank" class="projects-button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects-content">
+                        <div class="projects-content-txt">
+                            <h3 class="projects-subtitle">Website</h3>
+                            <h2 class="projects-title">PG Search Website</h2>
+    
+                            <p class="projects-description">
+                                Full-stack PG accommodation platform with user authentication, property listings, search/filter functionality, and mobile-responsive design for rental management.
+                            </p>
+                        </div>
+                        
+                        <div class="projects-buttons">
+                            <a href="https://github.com/om2511/pg-search-website/tree/my-branch" target="_blank" class="projects-link">
+                                <i class="ri-github-fill"></i> View
+                            </a>
+    
+                            <a href="#" target="_blank" class="projects-link">
+                                <i class="ri-global-line"></i> View
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="projects-card">
+                    <div class="projects-image">
+                        <img src="Collab.png" alt="Projects Image" class="projects-img">
+
+                        <a href="#" target="_blank" class="projects-button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects-content">
+                        <div class="projects-content-txt">
+                            <h3 class="projects-subtitle">Website</h3>
+                            <h2 class="projects-title">Collaborative Platform</h2>
+    
+                            <p class="projects-description">
+                                A platform for users to collaborate on projects, share ideas, and manage tasks effectively.
+                            </p>
+                        </div>
+
+                        <div class="projects-buttons">
+                            <a href="https://github.com/om2511/collaborative-platform" target="_blank" class="projects-link">
+                                <i class="ri-github-fill"></i> View
+                            </a>
+    
+                            <a href="#" target="_blank" class="projects-link">
+                                <i class="ri-global-line"></i> View
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!--=============== Hidden Projects ===============-->
+                <article class="projects-card hidden-project-1">
+                    <div class="projects-image">
+                        <img src="url-short.png" alt="Projects Image" class="projects-img">
+
+                        <a href="#" target="_blank" class="projects-button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects-content">
+                        <div class="projects-content-txt">
+                            <h3 class="projects-subtitle">Website</h3>
+                            <h2 class="projects-title">URL Shortener</h2>
+
+                            <p class="projects-description">
+                                A visually captivating and responsive URL shortener application that allows users to create and manage shortened links effortlessly.
+                            </p>
+                        </div>
+
+                        <div class="projects-buttons">
+                            <a href="https://github.com/om2511/url_shortner" target="_blank" class="projects-link">
+                                <i class="ri-github-fill"></i> View
+                            </a>
+    
+                            <a href="#" target="_blank" class="projects-link">
+                                <i class="ri-global-line"></i> View
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- <article class="projects-card hidden-project-2">
+                    <div class="projects-image">
+                        <img src="project3.png" alt="Projects Image" class="projects-img">
+
+                        <a href="#" target="_blank" class="projects-button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects-content">
+                        <div class="projects-content-txt">
+                            <h3 class="projects-subtitle">Website</h3>
+                            <h2 class="projects-title">Quiz Website</h2>
+    
+                            <p class="projects-description">
+                                An interactive quiz application with customizable questions, real-time scoring, and a seamless user experience.
+                            </p>
+                        </div>
+
+                        <div class="projects-buttons">
+                            <a href="https://github.com/om2511/Quiz-App" target="_blank" class="projects-link">
+                                <i class="ri-github-fill"></i> View
+                            </a>
+    
+                            <a href="#" target="_blank" class="projects-link">
+                                <i class="ri-global-line"></i> View
+                            </a>
+                        </div>
+                    </div>
+                </article> -->
+
+                <!-- <article class="projects-card hidden-project-3">
+                    <div class="projects-image">
+                        <img src="project5.png" alt="Projects Image" class="projects-img">
+
+                        <a href="#" target="_blank" class="projects-button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects-content">
+                        <div class="projects-content-txt">
+                            <h3 class="projects-subtitle">Website</h3>
+                            <h2 class="projects-title">Employee Management System</h2>
+    
+                            <p class="projects-description">
+                                A comprehensive employee management system with user authentication, data storage, and real-time updates.
+                            </p>
+                        </div>
+
+                        <div class="projects-buttons">
+                            <a href="https://github.com/om2511/Employee-Management-System" target="_blank" class="projects-link">
+                                <i class="ri-github-fill"></i> View
+                            </a>
+    
+                            <a href="#" target="_blank" class="projects-link">
+                                <i class="ri-global-line"></i> View
+                            </a>
+                        </div>
+                    </div>
+                </article> -->
+            </div>
+
+            <!--========== New Added - Show More/Less Func ==========-->
+            <div class="show-more-container">
+                <button class="show-more-btn">
+                    <span class="show-more-text">Show More</span>
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+            </div>
+        </section>
+
+        <!--=============== Services Section ===============-->
+        <section class="section" id="services">
+            <div class="title-container">
+                <h1>SERVICES</h1>
+                <img src="underline.webp" alt="image" class="underline">
+            </div>
+
+            <div class="services-container">
+                <article class="services-card">
+                    <div class="services-border"></div>
+
+                    <div class="services-content">
+                        <div class="services-icon">
+                            <div class="services-box web-box"></div>
+                            <i class="ri-global-fill"></i>
+                            <h2 class="services-title">Design</h2>
+                        </div>
+
+                        <p class="services-description">
+                            Crafting visually stunning and user-friendly designs tailored to your brand. I focus on creating intuitive layouts, color schemes, and typography that enhance user engagement and deliver a seamless browsing experience across all devices.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="services-card">
+                    <div class="services-border"></div>
+
+                    <div class="services-content">
+                        <div class="services-icon">
+                            <div class="services-box dev-box"></div>
+                            <i class="ri-code-s-slash-line"></i>
+                            <h2 class="services-title">Developement</h2>
+                        </div>
+
+                        <p class="services-description">
+                            Bringing your ideas to life with clean, efficient, and scalable code. I specialize in building responsive websites, integrating modern technologies, and ensuring compatibility across all browsers.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="services-card">
+                    <div class="services-border"></div>
+
+                    <div class="services-content">
+                        <div class="services-icon">
+                            <div class="services-box mnt-box"></div>
+                            <i class="ri-tools-fill"></i>
+                            <h2 class="services-title">Maintenance</h2>
+                        </div>
+
+                        <p class="services-description">
+                            Ensuring your website stays updated, secure, and running smoothly. My maintenance services include regular backups, performance optimizations, security monitoring, and content updates.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--=============== Resume Section ===============-->
+        <section class="section" id="resume">
+            <div class="title-container">
+                <h1>RESUME</h1>
+                <img src="underline.webp" alt="image" class="underline">
+            </div>
+
+            <div class="resume-container">
+                <div class="resume-txt-content">
+                    <p class="resume-para">"Discover my professional journey and technical expertise. Download my comprehensive resume to learn more about my experience, projects, and achievements in full stack development."</p>
+
+                    <button class="resume-download-btn">
+                        <i class="ri-download-2-fill"></i>
+                        <span class="resume-download-txt">Download My Resume</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== Contact Section ===============-->
+        <section class="section" id="contact">
+            <div class="title-container">
+                <h1>CONTACT</h1>
+                <img src="underline.webp" alt="image" class="underline">
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">Let's Talk</h3>
+                    
+                    <div class="contact-data">
+                        <div class="contact-data-item">
+                            <i class="ri-mail-line"></i>
+                            <div>
+                                <h4 class="contact-data-title">Email</h4>
+                                <span class="contact-data-desc">ompra2511@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-data-item">
+                            <i class="ri-phone-line"></i>
+                            <div>
+                                <h4 class="contact-data-title">Phone</h4>
+                                <span class="contact-data-desc">+91 95741 74660</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-data-item">
+                            <i class="ri-map-pin-line"></i>
+                            <div>
+                                <h4 class="contact-data-title">Location</h4>
+                                <span class="contact-data-desc">Kalol, Gujarat</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h3 class="contact-subtitle">Connect With Me</h3>
+                        
+                        <div class="contact-social-links">
+                            <a href="https://github.com/om2511" target="_blank" class="contact-social-link">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dev-om-prajapati/" target="_blank" class="contact-social-link">
+                                <i class="ri-linkedin-box-fill"></i>
+                            </a>
+                            <a href="https://x.com/OmPrajapati25" target="_blank" class="contact-social-link">
+                                <i class="ri-twitter-x-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/om_prajapati_2511/" target="_blank" class="contact-social-link">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact_form">
+                    <h3 class="contact-subtitle">Send Me a Message</h3>
+                    
+                    <div class="contact-form-group">
+                        <input type="text" placeholder="Your Name" name="user-name" class="contact-form-input" required>
+                        <input type="email" placeholder="Your Email" name="user-email" class="contact-form-input" required>
+                    </div>
+
+                    <input type="text" placeholder="Subject" name="user-subject" class="contact-form-input" required>
+                    <textarea placeholder="Your Message" name="user-message" class="contact-form-input contact-form-textarea" required></textarea>
+
+                    <button type="submit" class="contact-form-button">
+                        <i class="ri-send-plane-fill"></i> Send Message
+                    </button>
+
+                    <p class="contact-message" id="contact-msg"></p>
+                </form>
+            </div>
+        </section>
+
+        <!--=============== Links Section ===============-->
+        <section class="section" id="links">
+            <div class="title-container">
+                <h1>LINKS</h1>
+                <img src="underline.webp" alt="image" class="underline">
+            </div>
+
+            <div class="links-container">
+                <!-- Navigation Links -->
+                <div class="links-group">
+                    <h3 class="links-title">Quick Links</h3>
+                    <div class="links-content">
+                        <a href="#home" class="links-item">
+                            <i class="ri-arrow-right-s-line"></i> Home
+                        </a>
+                        <a href="#about" class="links-item">
+                            <i class="ri-arrow-right-s-line"></i> About
+                        </a>
+                        <a href="#services" class="links-item">
+                            <i class="ri-arrow-right-s-line"></i> Services
+                        </a>
+                        <a href="#projects" class="links-item">
+                            <i class="ri-arrow-right-s-line"></i> Projects
+                        </a>
+                        <a href="#resume" class="links-item">
+                            <i class="ri-arrow-right-s-line"></i> Resume
+                        </a>
+                        <a href="#contact" class="links-item">
+                            <i class="ri-arrow-right-s-line"></i> Contact
+                        </a>
+                    </div>
+                </div>
+            
+                <!-- Social Media Links -->
+                <div class="links-group">
+                    <h3 class="links-title">Social Media</h3>
+                    <div class="links-content">
+                        <a href="https://github.com/om2511" target="_blank" class="links-item">
+                            <i class="ri-github-fill"></i> om2511
+                        </a>
+                        <a href="https://www.linkedin.com/in/dev-om-prajapati/" target="_blank" class="links-item">
+                            <i class="ri-linkedin-box-fill"></i> dev-om-prajapati
+                        </a>
+                        <a href="https://x.com/OmPrajapati25" target="_blank" class="links-item">
+                            <i class="ri-twitter-x-fill"></i> OmPrajapati25
+                        </a>
+                        <a href="https://www.instagram.com/om_prajapati_2511/" target="_blank" class="links-item">
+                            <i class="ri-instagram-fill"></i> om_prajapati_2511
+                        </a>
+                    </div>
+                </div>
+            
+                <!-- YouTube Channels -->
+                <div class="links-group">
+                    <h3 class="links-title">YouTube Channels</h3>
+                    <div class="links-content">
+                        <a href="https://www.youtube.com/@CodeCraftedWeb" target="_blank" class="links-item">
+                            <i class="ri-youtube-fill"></i> CodeCraftedWeb
+                        </a>
+                        <!-- <a href="#" class="links-item">
+                            <i class="ri-youtube-fill"></i> Tech Reviews
+                        </a> -->
+                        <a href="https://www.youtube.com/@om.prajapati.25" target="_blank" class="links-item">
+                            <i class="ri-youtube-fill"></i> Om Prajapati
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <!-- <footer class="footer">
+                <div class="footer-content">
+                    <p class="footer-copy">
+                        © 2024 Om Prajapati. All rights reserved
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <i class="ri-linkedin-box-fill"></i>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer> -->
+        </section>
+    </main>
+      
+    <!--=============== Main JS ===============-->
+    <script src="script.js"></script>
+
+    <!--=============== Email JS ===============-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!--=============== Scrollreveal JS ===============-->
+    <!-- <script src="scrollreveal.min.js"></script> -->
+</body>
+</html>
