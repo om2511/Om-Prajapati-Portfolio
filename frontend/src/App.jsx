@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AboutSection from "./components/AboutSection";
+import ApproachSection from "./components/ApproachSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import HomeSection from "./components/HomeSection";
-import LinksSection from "./components/LinksSection";
 import Navbar from "./components/Navbar";
 import ProjectsSection from "./components/ProjectsSection";
 import ResumeSection from "./components/ResumeSection";
 import ServicesSection from "./components/ServicesSection";
 
-const sectionIds = ["home", "about", "projects", "services", "resume", "contact", "links"];
+const sectionIds = ["home", "about", "projects", "services", "approach", "resume", "contact"];
 
 export default function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
@@ -24,29 +24,73 @@ export default function App() {
   }, [isDarkTheme]);
 
   useEffect(() => {
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const updateActiveSection = () => {
+      const scrollAnchor = window.scrollY + 180;
+      let currentSection = "home";
+
+      elements.forEach((element) => {
+        if (scrollAnchor >= element.offsetTop) {
+          currentSection = element.id;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
     const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (left, right) =>
+              right.intersectionRatio - left.intersectionRatio ||
+              left.boundingClientRect.top - right.boundingClientRect.top
+          );
+
+        if (visibleEntries[0]) {
+          setActiveSection(visibleEntries[0].target.id);
+        } else {
+          updateActiveSection();
+        }
+      },
+      {
+        threshold: [0.2, 0.35, 0.55, 0.75],
+        rootMargin: "-18% 0px -52% 0px"
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateActiveSection);
+    };
+  }, []);
+
+  useEffect(() => {
+    const revealTargets = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.35,
-        rootMargin: "-15% 0px -40% 0px"
+        threshold: 0.16
       }
     );
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => observer.disconnect();
+    revealTargets.forEach((element) => revealObserver.observe(element));
+    return () => revealObserver.disconnect();
   }, []);
 
   return (
@@ -62,9 +106,9 @@ export default function App() {
         <AboutSection />
         <ProjectsSection />
         <ServicesSection />
+        <ApproachSection />
         <ResumeSection />
         <ContactSection />
-        <LinksSection />
       </main>
 
       <Footer />

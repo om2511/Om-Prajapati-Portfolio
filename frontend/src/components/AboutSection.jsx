@@ -1,21 +1,21 @@
 import SectionHeading from "./SectionHeading";
-import { profile } from "../data/portfolio";
+import { focusCards, profile, stackGroups } from "../data/portfolio";
 
 export default function AboutSection() {
   return (
-    <section className="section section--grid" id="about">
+    <section className="section" id="about">
       <SectionHeading
         eyebrow="About"
-        title="Engineer first, portfolio second."
-        description="This portfolio is being rebuilt around a proper frontend and backend structure because presentation alone is not enough."
+        title="Product-focused development with frontend discipline and backend accountability."
+        description="I work best on products that need clean visual execution, strong responsiveness, and a backend that stays simple enough to maintain after launch."
       />
 
       <div className="about-grid">
-        <article className="card about-card">
+        <article className="card about-card reveal">
           <p>{profile.about}</p>
         </article>
 
-        <article className="card skills-card">
+        <article className="card skills-card reveal">
           <h3>Core Skills</h3>
           <div className="tag-list">
             {profile.skills.map((skill) => (
@@ -25,6 +25,30 @@ export default function AboutSection() {
             ))}
           </div>
         </article>
+      </div>
+
+      <div className="focus-grid">
+        {focusCards.map((item) => (
+          <article key={item.title} className="focus-card reveal">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="stack-grid">
+        {stackGroups.map((group) => (
+          <article key={group.title} className="stack-card reveal">
+            <h3>{group.title}</h3>
+            <div className="tag-list">
+              {group.items.map((item) => (
+                <span key={item} className="tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

@@ -6,13 +6,13 @@ export default function ServicesSection() {
     <section className="section" id="services">
       <SectionHeading
         eyebrow="Services"
-        title="Work that is practical, maintainable, and presentable."
-        description="This phase keeps the offer set direct instead of padded with vague service language."
+        title="Work shaped around real product delivery, not generic service packaging."
+        description="I focus on frontend execution, backend structure, and pragmatic product builds that stay maintainable after launch."
       />
 
       <div className="services-grid">
         {services.map((service) => (
-          <article key={service.title} className="service-card">
+          <article key={service.title} className="service-card reveal">
             <div className="service-card__icon">
               <i className={service.icon} />
             </div>

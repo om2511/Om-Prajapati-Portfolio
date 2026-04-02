@@ -1,5 +1,5 @@
 import SectionHeading from "./SectionHeading";
-import { profile } from "../data/portfolio";
+import { profile, resumeHighlights } from "../data/portfolio";
 
 export default function ResumeSection() {
   return (
@@ -7,19 +7,31 @@ export default function ResumeSection() {
       <div>
         <SectionHeading
           eyebrow="Resume"
-          title="Direct access to my experience and project background."
-          description="The resume stays as a static downloadable document in this phase because that is the correct level of complexity."
+          title="A direct view of the work, tools, and delivery focus behind this portfolio."
+          description="The resume is still a static downloadable file, which is the correct level of complexity for this project."
         />
       </div>
 
-      <article className="resume-panel">
+      <article className="resume-panel reveal">
         <p>
-          Download the resume for a compact view of experience, technical stack,
-          and project history.
+          Download the resume for a compact summary of experience, technical stack,
+          and the kind of product work I am best suited to ship.
         </p>
-        <a href={profile.resume} download className="button button--primary">
-          Download Resume
-        </a>
+
+        <ul className="resume-highlights">
+          {resumeHighlights.map((item) => (
+            <li key={item}>
+              <i className="ri-checkbox-circle-fill" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="resume-panel__actions">
+          <a href={profile.resume} download className="button button--primary">
+            Download Resume
+          </a>
+        </div>
       </article>
     </section>
   );

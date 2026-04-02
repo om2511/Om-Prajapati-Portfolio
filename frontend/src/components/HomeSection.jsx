@@ -1,58 +1,48 @@
 import { useEffect, useState } from "react";
 import { heroRoles, profile, stats } from "../data/portfolio";
 
-function useTypewriter(words) {
+function useFadingRoles(words) {
   const [wordIndex, setWordIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const currentWord = words[wordIndex];
-    const isWordComplete = charIndex === currentWord.length;
-    const isWordCleared = charIndex === 0;
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
-          if (isWordComplete) {
-            setIsDeleting(true);
-            return;
-          }
+    const fadeOutTimeout = setTimeout(() => {
+      setIsVisible(false);
+    }, 2200);
 
-          setCharIndex((value) => value + 1);
-          return;
-        }
+    const switchTimeout = setTimeout(() => {
+      setWordIndex((value) => (value + 1) % words.length);
+      setIsVisible(true);
+    }, 2550);
 
-        if (isWordCleared) {
-          setIsDeleting(false);
-          setWordIndex((value) => (value + 1) % words.length);
-          return;
-        }
+    return () => {
+      clearTimeout(fadeOutTimeout);
+      clearTimeout(switchTimeout);
+    };
+  }, [wordIndex, words.length]);
 
-        setCharIndex((value) => value - 1);
-      },
-      isDeleting ? 45 : isWordComplete ? 1400 : 90
-    );
-
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, wordIndex, words]);
-
-  return words[wordIndex].slice(0, charIndex);
+  return {
+    role: words[wordIndex],
+    isVisible
+  };
 }
 
 export default function HomeSection() {
-  const typedRole = useTypewriter(heroRoles);
+  const { role, isVisible } = useFadingRoles(heroRoles);
 
   return (
     <section className="hero section" id="home">
-      <div className="hero__copy">
-        <span className="hero__eyebrow">Professional Portfolio</span>
+      <div className="hero__copy reveal">
+        <span className="hero__eyebrow">Full Stack Portfolio</span>
+        <p className="hero__availability">
+          <i className="ri-sparkling-2-line" /> {profile.availability}
+        </p>
         <h1>
-          <span>Om Prajapati</span>
-          <span className="hero__role">
-            {typedRole}
-            <span className="hero__cursor" />
-          </span>
+          <span className="hero__name">Om Prajapati</span>
         </h1>
+        <div className="hero__role-shell" aria-live="polite">
+          <span className={`hero__role ${isVisible ? "is-visible" : ""}`}>{role}</span>
+        </div>
         <p className="hero__title">{profile.title}</p>
         <p className="hero__tagline">{profile.tagline}</p>
 
@@ -75,7 +65,7 @@ export default function HomeSection() {
         </div>
       </div>
 
-      <div className="hero__visual">
+      <div className="hero__visual reveal">
         <div className="hero__image-frame">
           <img src={profile.image} alt={profile.name} />
         </div>

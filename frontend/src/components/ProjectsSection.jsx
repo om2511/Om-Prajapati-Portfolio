@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SectionHeading from "./SectionHeading";
 import { projects } from "../data/portfolio";
 
@@ -9,17 +9,31 @@ export default function ProjectsSection() {
     [showAll]
   );
 
+  useEffect(() => {
+    if (!showAll) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      document
+        .querySelectorAll("#projects .reveal")
+        .forEach((element) => element.classList.add("is-visible"));
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [showAll]);
+
   return (
     <section className="section" id="projects">
       <SectionHeading
         eyebrow="Selected Work"
-        title="Projects built around real product problems."
-        description="The focus here is not decoration. It is shipping usable work with clear technical intent."
+        title="Projects built to solve specific product problems."
+        description="These projects show how I approach frontend polish, full-stack flow, and practical feature implementation."
       />
 
       <div className="projects-grid">
         {visibleProjects.map((project) => (
-          <article key={project.title} className="project-card">
+          <article key={project.title} className="project-card reveal">
             <div className="project-card__image">
               <img src={project.image} alt={project.title} />
             </div>
@@ -28,6 +42,14 @@ export default function ProjectsSection() {
               <span className="project-card__category">{project.category}</span>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+
+              <div className="project-card__highlights">
+                {project.highlights.map((item) => (
+                  <span key={item} className="project-card__pill">
+                    {item}
+                  </span>
+                ))}
+              </div>
 
               <div className="project-card__actions">
                 <a
@@ -58,7 +80,7 @@ export default function ProjectsSection() {
       </div>
 
       {projects.length > 3 ? (
-        <div className="section-actions">
+        <div className="section-actions reveal">
           <button
             type="button"
             className="button button--ghost"

@@ -1,1 +1,3 @@
 Codex [2026-04-02 04:53:53 UTC] Git branch creation and local server binding can be blocked by the sandbox even when filesystem edits in the workspace are allowed. For this project, Git writes required escalated execution and backend runtime validation inside the sandbox was limited by `EPERM` on port binding, so future validation steps should separate code correctness from environment restrictions and record that distinction explicitly.
+
+- 2026-04-02: Do not use broad rollback scripts against frontend files without first verifying the exact target revision around each requested change. Restore only the scoped diff the user asked for.
