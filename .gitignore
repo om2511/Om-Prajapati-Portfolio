@@ -47,6 +47,7 @@ node_modules/
 
 # next.js build output
 .next
+.vite/
 
 # Nuxt.js build output
 .nuxt

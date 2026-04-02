@@ -1,51 +1,53 @@
-# Portfolio Monorepo
+# Om Prajapati Portfolio
 
-This repository now contains two parallel implementations:
+A full-stack portfolio built with React, Express, and MongoDB. The project is designed to present work clearly, feel polished on every screen size, and handle contact submissions through a real backend instead of client-side hacks.
 
-1. The archived static portfolio in `legacy-static/`.
-2. The new React frontend and Express backend migration in `frontend/` and `backend/`.
-
-The active application path is the React plus Express workspace.
-
-## Stack
+## Live Stack
 
 - Frontend: React + Vite
 - Backend: Express
-- Database: MongoDB with Mongoose for contact messages
-- Workspace: npm workspaces at the repository root
+- Database: MongoDB with Mongoose
+- Deployment: Render Blueprint
 
-## Structure
+## Highlights
+
+- Responsive portfolio UI with a stronger visual system and motion-driven section reveals
+- Backend-powered contact form with MongoDB persistence
+- Input validation, basic rate limiting, and explicit CORS handling on the API
+- Monorepo workspace structure for frontend and backend development
+- Render-ready deployment configuration through `render.yaml`
+
+## Project Structure
 
 ```text
 frontend/   React portfolio application
 backend/    Express API and MongoDB models
-legacy-static/ archived HTML/CSS/JS portfolio
-projectdocs/ migration notes and implementation tracking
-render.yaml  Render Blueprint for deploying frontend and backend on Render
+projectdocs/ implementation and deployment notes
+render.yaml  Render Blueprint for frontend and backend deployment
 ```
 
 ## Local Development
 
 1. Create a `.env` file in the repository root based on `.env.example`.
-2. Set a valid `MONGODB_URI` if you want contact submissions to persist.
-3. Make sure a MongoDB server is actually running on that URI before starting the backend.
-4. Install dependencies:
+2. Set a valid `MONGODB_URI`.
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-5. Start frontend and backend together:
+4. Start the full stack:
 
 ```bash
 npm run dev
 ```
 
-Frontend runs on `http://127.0.0.1:5173`.
+Default local URLs:
 
-Backend runs on `http://127.0.0.1:5000`.
+- Frontend: `http://127.0.0.1:5173`
+- Backend: `http://127.0.0.1:5000`
 
-The frontend uses the Vite dev proxy for `/api`, so you do not need `VITE_API_BASE_URL` for local development.
+The frontend uses the Vite `/api` proxy locally, so you do not need `VITE_API_BASE_URL` for development.
 
 ## Validation
 
@@ -55,13 +57,13 @@ Build the frontend:
 npm run build
 ```
 
-Check backend health after it starts:
+Check backend health:
 
 ```bash
 npm run health:backend
 ```
 
-Expected health response shape:
+Expected response:
 
 ```json
 {
@@ -70,39 +72,33 @@ Expected health response shape:
 }
 ```
 
-If MongoDB is not configured, the backend still starts, but `/api/contact` returns a `503` until a database connection is available.
+## Contact API
 
-If `MONGODB_URI` points to `mongodb://localhost:27017/portfolio` but MongoDB is not running locally, backend startup fails with `ECONNREFUSED 127.0.0.1:27017`.
+The contact form submits to `POST /api/contact`.
 
-## Contact Flow
+The backend:
 
-The old client-side EmailJS flow is not used in the new React app.
-
-The new contact form submits to `POST /api/contact`.
-
-Messages are stored through the `Contact` Mongoose model when MongoDB is connected.
-
-## Current Limitation
-
-There is no active root deployment configuration for the new full-stack setup yet.
-
-The old static `vercel.json` was archived with the legacy site because reusing it for the React plus Express stack would be incorrect.
-
-Deployment still needs an explicit hosting decision instead of a guessed configuration.
+- validates and normalizes contact input
+- rate limits repeated submissions
+- stores messages in MongoDB
 
 ## Render Deployment
 
-This repository now includes a Render Blueprint in `render.yaml`.
+This repository is configured for Render using `render.yaml`.
 
-The intended Render model is:
+Deployment model:
 
-1. `frontend/` as a Render Static Site
-2. `backend/` as a Render Web Service
+1. `frontend/` as a Static Site
+2. `backend/` as a Web Service
 
-Important:
+Required Render environment variables:
 
-- The backend needs a real `MONGODB_URI`.
-- The frontend needs `VITE_API_BASE_URL` set to the backend's public Render URL.
-- The backend needs `CLIENT_ORIGIN` set to the frontend's public Render URL.
+- Backend:
+  - `MONGODB_URI`
+  - `CLIENT_ORIGIN`
+- Frontend:
+  - `VITE_API_BASE_URL`
 
-Those two public URLs must be filled in after Render creates the services, because they are not known ahead of time.
+## Notes
+
+This repository contains project documentation in `projectdocs/` for implementation history and deployment tracking.

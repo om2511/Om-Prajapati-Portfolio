@@ -65,12 +65,12 @@ export default function ContactSection() {
     <section className="section" id="contact">
       <SectionHeading
         eyebrow="Contact"
-        title="Start with a clear message."
-        description="This form is wired for backend submission instead of client-side email hacks."
+        title="Start with a clear project brief."
+        description="Tell me what you are building, what is broken, or what needs improvement. I will get the message through the backend workflow."
       />
 
       <div className="contact-grid">
-        <article className="contact-panel">
+        <article className="contact-panel reveal">
           <h3>Direct Contact</h3>
           <ul className="contact-list">
             <li>
@@ -97,7 +97,7 @@ export default function ContactSection() {
           </div>
         </article>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form reveal" onSubmit={handleSubmit}>
           <div className="form-grid">
             <label>
               <span>Name</span>
