@@ -31,6 +31,8 @@ The backend must bind to `0.0.0.0` on Render. The code now supports that automat
 
 The frontend cannot use Render's private network host for browser API calls. It needs the backend's public Render URL.
 
+The frontend static site service does not currently accept the `plan: free` setting in this Blueprint context for this workspace, so the static service intentionally omits `plan` and uses Render's default supported plan for that service type.
+
 Because Render Blueprint interpolation does not provide a safe public browser URL for this static-to-web-service case, `VITE_API_BASE_URL` must be set manually in Render after the backend service URL is known.
 
 For the same reason, `CLIENT_ORIGIN` must also be set manually on the backend to the frontend's final Render URL.
