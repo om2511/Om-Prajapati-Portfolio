@@ -5,10 +5,21 @@ import contactRoutes from "./routes/contactRoutes.js";
 
 export function createApp({ clientOrigin }) {
   const app = express();
+  const allowedOrigins = clientOrigin
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
 
   app.use(
     cors({
-      origin: clientOrigin,
+      origin(origin, callback) {
+        if (!origin || allowedOrigins.includes("*") || allowedOrigins.includes(origin)) {
+          callback(null, true);
+          return;
+        }
+
+        callback(new Error("CORS origin not allowed."));
+      },
       methods: ["GET", "POST"],
       credentials: false
     })

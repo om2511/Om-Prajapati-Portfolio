@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
 import Contact from "../models/Contact.js";
+import { validateContactPayload } from "../utils/contactValidation.js";
 
 export async function createContactMessage(request, response) {
-  const { name, email, subject, message } = request.body;
+  const validation = validateContactPayload(request.body);
 
-  if (!name || !email || !subject || !message) {
-    return response.status(400).json({
-      message: "All contact fields are required."
+  if (!validation.ok) {
+    return response.status(validation.status).json({
+      message: validation.message
     });
   }
 
@@ -18,12 +19,7 @@ export async function createContactMessage(request, response) {
   }
 
   try {
-    const contact = await Contact.create({
-      name,
-      email,
-      subject,
-      message
-    });
+    const contact = await Contact.create(validation.value);
 
     return response.status(201).json({
       message: "Contact message stored successfully.",

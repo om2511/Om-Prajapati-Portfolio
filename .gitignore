@@ -43,6 +43,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
+.codex
 
 # next.js build output
 .next
