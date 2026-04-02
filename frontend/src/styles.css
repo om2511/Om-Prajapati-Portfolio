@@ -159,14 +159,21 @@ body.theme-dark .site-header {
 }
 
 .site-brand__mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
+  display: block;
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+  overflow: hidden;
+  border: 1px solid var(--surface-border);
   box-shadow: var(--shadow-md);
-  color: #fff;
+  background: color-mix(in srgb, var(--bg-strong) 82%, transparent);
+}
+
+.site-brand__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .site-nav {

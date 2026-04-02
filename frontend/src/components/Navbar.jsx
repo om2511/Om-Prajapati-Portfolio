@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { navItems } from "../data/portfolio";
+import { navItems, profile } from "../data/portfolio";
 
 export default function Navbar({ activeSection, isDarkTheme, onThemeToggle }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,8 +8,10 @@ export default function Navbar({ activeSection, isDarkTheme, onThemeToggle }) {
     <header className="site-header">
       <div className="site-header__inner">
         <a className="site-brand" href="#home">
-          <span className="site-brand__mark">OP</span>
-          <span className="site-brand__text">Om Prajapati</span>
+          <span className="site-brand__mark" aria-hidden="true">
+            <img src={profile.image} alt="" />
+          </span>
+          <span className="site-brand__text">{profile.name}</span>
         </a>
 
         <nav className={`site-nav ${isMenuOpen ? "is-open" : ""}`} aria-label="Primary">
