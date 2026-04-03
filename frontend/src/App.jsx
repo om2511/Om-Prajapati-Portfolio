@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AboutSection from "./components/AboutSection";
 import ApproachSection from "./components/ApproachSection";
 import ContactSection from "./components/ContactSection";
@@ -24,9 +24,7 @@ export default function App() {
   }, [isDarkTheme]);
 
   useEffect(() => {
-    const elements = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+    const elements = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
     const updateActiveSection = () => {
       const scrollAnchor = window.scrollY + 180;
@@ -94,7 +92,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="app-shell">
+    <div className="min-h-screen">
       <Navbar
         activeSection={activeSection}
         isDarkTheme={isDarkTheme}

@@ -9,66 +9,66 @@ export const navItems = [
 ];
 
 export const heroRoles = [
-  "Full Stack Developer",
+  "Full-Stack Developer",
   "MERN Stack Engineer",
   "UI-Focused Product Builder"
 ];
 
 export const profile = {
   name: "Om Prajapati",
-  title: "Full stack developer building clean interfaces, dependable APIs, and product-focused web experiences.",
+  title: "Full-stack developer building polished interfaces, reliable APIs, and production-ready web experiences.",
   tagline:
-    "I work across React, Node.js, Express, and MongoDB to deliver products that are responsive, practical, and ready to ship.",
+    "I work across React, Tailwind CSS, Node.js, Express, and MongoDB to ship products that are responsive, maintainable, and built for real use.",
   image: "/my-img-1.jpg",
   resume: "/Om Prajapati Resume.pdf",
   email: "ompra2511@gmail.com",
   phone: "+91 95741 74660",
   location: "Kalol, Gujarat, India",
-  availability: "Available for freelance work, internships, and product-focused collaborations.",
+  availability: "Open to internships, freelance builds, and product engineering collaborations.",
   about:
-    "I build web products with a strong bias toward clarity, responsiveness, and maintainable engineering. My work is best when the UI needs to feel intentional and the backend needs to stay reliable under real use.",
+    "I build web products with a strong focus on clarity, responsive behavior, and maintainable engineering. My best work sits at the intersection of sharp frontend execution and straightforward backend architecture that teams can actually extend.",
   skills: [
     "React",
+    "Tailwind CSS",
     "JavaScript",
     "Node.js",
     "Express.js",
     "MongoDB",
     "HTML",
     "CSS",
-    "Tailwind CSS",
     "Git",
     "REST APIs"
   ]
 };
 
 export const stats = [
-  { value: "4", label: "Portfolio projects shipped" },
+  { value: "5", label: "Featured projects" },
   { value: "MERN", label: "Primary delivery stack" },
-  { value: "API", label: "Mongo-backed contact workflow" }
+  { value: "Render", label: "Deployment workflow" }
 ];
 
 export const focusCards = [
   {
     title: "Product mindset",
     description:
-      "I build around actual user flow, not just isolated sections or pretty screenshots."
+      "I design around actual user flow, decision clarity, and the kind of interactions that hold up beyond the first demo."
   },
   {
     title: "Frontend quality",
     description:
-      "I care about layout polish, responsive behavior, and interfaces that look deliberate."
+      "I care about hierarchy, spacing, responsiveness, and motion so the UI feels intentional instead of assembled from defaults."
   },
   {
     title: "Backend reliability",
     description:
-      "I keep APIs and data flow simple, explicit, and maintainable instead of overengineered."
+      "I keep APIs and data flow explicit, practical, and maintainable instead of hiding simple logic behind unnecessary abstraction."
   }
 ];
 
 export const stackGroups = [
   {
     title: "Frontend",
-    items: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Responsive UI"]
+    items: ["React", "Tailwind CSS", "JavaScript", "HTML", "Responsive UI"]
   },
   {
     title: "Backend",
@@ -95,7 +95,7 @@ export const projects = [
     title: "RecipeWala",
     category: "AI + Social Platform",
     description:
-      "AI-powered social recipe sharing platform where users generate recipes, curate collections, and engage with a community-driven food workflow.",
+      "AI-powered recipe sharing product where users generate recipes, curate food collections, and interact through a community-driven cooking workflow.",
     image: "/RecipeWala.png",
     githubUrl: "https://github.com/om2511/RecipeWala",
     liveUrl: "",
@@ -105,7 +105,7 @@ export const projects = [
     title: "PG Search Website",
     category: "Rental Platform",
     description:
-      "Full-stack PG accommodation platform with authentication, property discovery, filtering, and mobile-responsive rental management flows.",
+      "Full-stack PG accommodation platform with authentication, property discovery, filtering, and responsive rental-management flows.",
     image: "/PG-Search.png",
     githubUrl: "https://github.com/om2511/pg-search-website/tree/my-branch",
     liveUrl: "",
@@ -115,7 +115,7 @@ export const projects = [
     title: "Collaborative Platform",
     category: "Team Productivity",
     description:
-      "Collaboration-oriented product for project coordination, task management, and shared execution between users working on common goals.",
+      "Collaboration-oriented platform for project coordination, task management, and shared execution between users working toward common goals.",
     image: "/Collab.png",
     githubUrl: "https://github.com/om2511/collaborative-platform",
     liveUrl: "",
@@ -125,7 +125,7 @@ export const projects = [
     title: "URL Shortener",
     category: "Utility App",
     description:
-      "Responsive URL shortener that focuses on clean link creation and management with an emphasis on speed and straightforward user interaction.",
+      "Responsive URL shortener focused on clean link creation and straightforward interaction rather than overcomplicated features.",
     image: "/url-short.png",
     githubUrl: "https://github.com/om2511/url_shortner",
     liveUrl: "",
@@ -138,19 +138,19 @@ export const services = [
     title: "Frontend Development",
     icon: "ri-window-line",
     description:
-      "Responsive React interfaces, clean component structure, and polished visual execution that feels deliberate instead of generic."
+      "Responsive React interfaces with Tailwind CSS, strong hierarchy, and product-level visual polish that feels deliberate."
   },
   {
     title: "Backend Development",
     icon: "ri-server-line",
     description:
-      "Express APIs, MongoDB data modeling, and pragmatic backend design that stays maintainable as the product grows."
+      "Express APIs, MongoDB data modeling, and pragmatic backend structure that stays readable and maintainable as features grow."
   },
   {
-    title: "Portfolio & Product Builds",
+    title: "Portfolio and Product Builds",
     icon: "ri-rocket-line",
     description:
-      "End-to-end implementation for personal brands and small products where strong presentation and reliable functionality both matter."
+      "End-to-end delivery for portfolios and small products where strong presentation and dependable functionality both matter."
   }
 ];
 
@@ -159,25 +159,25 @@ export const processSteps = [
     step: "01",
     title: "Clarify the product",
     description:
-      "I reduce vague requirements into a working page structure, user path, and delivery scope before writing code."
+      "I reduce vague requirements into a clear scope, interface direction, and practical delivery path before implementation starts."
   },
   {
     step: "02",
     title: "Design for actual use",
     description:
-      "I focus on hierarchy, readability, motion, and responsiveness so the interface feels like a product instead of a template."
+      "I focus on hierarchy, responsiveness, and interaction quality so the interface supports the product instead of distracting from it."
   },
   {
     step: "03",
     title: "Build the system cleanly",
     description:
-      "I connect polished UI with straightforward APIs and data models so the product remains maintainable after launch."
+      "I connect polished UI with straightforward APIs and data models so the finished product remains maintainable after launch."
   }
 ];
 
 export const resumeHighlights = [
-  "Full stack development with React, Node.js, Express, and MongoDB",
-  "Responsive interface implementation with component-based frontend architecture",
+  "Full-stack development with React, Tailwind CSS, Node.js, Express, and MongoDB",
+  "Responsive interface delivery with reusable component structure and consistent typography",
   "Backend-driven contact flow deployed on Render with MongoDB persistence",
   "Project-focused portfolio built around real products instead of placeholder demos"
 ];

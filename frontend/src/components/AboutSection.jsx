@@ -3,23 +3,23 @@ import { focusCards, profile, stackGroups } from "../data/portfolio";
 
 export default function AboutSection() {
   return (
-    <section className="section" id="about">
+    <section className="section-shell" id="about">
       <SectionHeading
         eyebrow="About"
-        title="Product-focused development with frontend discipline and backend accountability."
-        description="I work best on products that need clean visual execution, strong responsiveness, and a backend that stays simple enough to maintain after launch."
+        title="Frontend polish and backend discipline working as one delivery system."
+        description="I build products that need strong visual structure, responsive behavior, and backend decisions that stay maintainable after launch."
       />
 
-      <div className="about-grid">
-        <article className="card about-card reveal">
-          <p>{profile.about}</p>
+      <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <article className="surface-card reveal px-6 py-7 md:px-8 md:py-9">
+          <p className="text-base leading-8 text-[var(--muted)] md:text-lg">{profile.about}</p>
         </article>
 
-        <article className="card skills-card reveal">
-          <h3>Core Skills</h3>
-          <div className="tag-list">
+        <article className="surface-card reveal px-6 py-7 md:px-8 md:py-9">
+          <h3 className="text-xl font-semibold tracking-[-0.03em]">Core Skills</h3>
+          <div className="mt-5 flex flex-wrap gap-3">
             {profile.skills.map((skill) => (
-              <span key={skill} className="tag">
+              <span key={skill} className="pill">
                 {skill}
               </span>
             ))}
@@ -27,22 +27,22 @@ export default function AboutSection() {
         </article>
       </div>
 
-      <div className="focus-grid">
+      <div className="mt-6 grid gap-5 md:grid-cols-3">
         {focusCards.map((item) => (
-          <article key={item.title} className="focus-card reveal">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+          <article key={item.title} className="surface-card reveal px-6 py-7">
+            <h3 className="text-lg font-semibold tracking-[-0.03em]">{item.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-[var(--muted)] md:text-base">{item.description}</p>
           </article>
         ))}
       </div>
 
-      <div className="stack-grid">
+      <div className="mt-6 grid gap-5 md:grid-cols-3">
         {stackGroups.map((group) => (
-          <article key={group.title} className="stack-card reveal">
-            <h3>{group.title}</h3>
-            <div className="tag-list">
+          <article key={group.title} className="surface-card reveal px-6 py-7">
+            <h3 className="text-lg font-semibold tracking-[-0.03em]">{group.title}</h3>
+            <div className="mt-4 flex flex-wrap gap-3">
               {group.items.map((item) => (
-                <span key={item} className="tag">
+                <span key={item} className="pill">
                   {item}
                 </span>
               ))}
