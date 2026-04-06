@@ -122,13 +122,13 @@ export const projects = [
     highlights: ["Project collaboration", "Task flow", "Shared workspace UX"]
   },
   {
-    title: "URL Shortener",
+    title: "Linkify",
     category: "Utility App",
     description:
       "Responsive URL shortener focused on clean link creation and straightforward interaction rather than overcomplicated features.",
     image: "/url-short.png",
     githubUrl: "https://github.com/om2511/url_shortner",
-    liveUrl: "",
+    liveUrl: "https://url-shortner-two-opal.vercel.app/",
     highlights: ["Utility workflow", "Simple UX", "Fast interaction"]
   }
 ];
