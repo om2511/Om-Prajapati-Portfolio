@@ -98,7 +98,7 @@ export const projects = [
       "AI-powered recipe sharing product where users generate recipes, curate food collections, and interact through a community-driven cooking workflow.",
     image: "/RecipeWala.png",
     githubUrl: "https://github.com/om2511/RecipeWala",
-    liveUrl: "",
+    liveUrl: "https://recipewala.vercel.app/",
     highlights: ["React UI", "Node + MongoDB", "Social product flow"]
   },
   {
