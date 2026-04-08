@@ -108,7 +108,7 @@ export const projects = [
       "Full-stack PG accommodation platform with authentication, property discovery, filtering, and responsive rental-management flows.",
     image: "/PG-Search.png",
     githubUrl: "https://github.com/om2511/pg-search-website/tree/my-branch",
-    liveUrl: "",
+    liveUrl: "https://pg-search-website.vercel.app/",
     highlights: ["Authentication", "Search and filters", "Responsive listings"]
   },
   {

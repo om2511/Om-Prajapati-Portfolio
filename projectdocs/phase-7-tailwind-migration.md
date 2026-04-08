@@ -24,3 +24,6 @@ Final polish adjustments:
 
 Gradient fix:
 - Hero image gradient treatment was strengthened with layered internal overlays so the effect is actually visible instead of washing out against the card.
+
+Project content update:
+- Added the live deployment URL for the PG Search Website project card.
