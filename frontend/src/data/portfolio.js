@@ -118,7 +118,7 @@ export const projects = [
       "Collaboration-oriented platform for project coordination, task management, and shared execution between users working toward common goals.",
     image: "/Collab.png",
     githubUrl: "https://github.com/om2511/collaborative-platform",
-    liveUrl: "",
+    liveUrl: "https://collaborative-platform-gamma.vercel.app/",
     highlights: ["Project collaboration", "Task flow", "Shared workspace UX"]
   },
   {

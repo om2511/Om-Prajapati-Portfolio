@@ -27,3 +27,6 @@ Gradient fix:
 
 Project content update:
 - Added the live deployment URL for the PG Search Website project card.
+
+Project content update:
+- Added the live deployment URL for the Collaborative Platform project card.
