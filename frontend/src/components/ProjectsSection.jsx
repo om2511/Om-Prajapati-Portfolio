@@ -40,8 +40,6 @@ export default function ProjectsSection() {
         eyebrow="Selected Work"
         title="Projects that show product thinking, UI discipline, and full-stack execution."
         description="Each project here represents practical work. The goal is not to fill space but to show clear interfaces, usable flows, and deliberate technical delivery."
-        title="Projects built to solve specific product problems."
-        description="These projects show how I approach frontend polish, full-stack flow, and practical feature implementation."
       />
 
       <div className="grid gap-6 lg:grid-cols-2">

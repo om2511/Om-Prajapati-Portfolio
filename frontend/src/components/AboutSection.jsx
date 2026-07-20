@@ -43,13 +43,6 @@ export default function AboutSection() {
             <div className="mt-4 flex flex-wrap gap-3">
               {group.items.map((item) => (
                 <span key={item} className="pill">
-      <div className="stack-grid">
-        {stackGroups.map((group) => (
-          <article key={group.title} className="stack-card reveal">
-            <h3>{group.title}</h3>
-            <div className="tag-list">
-              {group.items.map((item) => (
-                <span key={item} className="tag">
                   {item}
                 </span>
               ))}

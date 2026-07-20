@@ -22,30 +22,16 @@ export default function ResumeSection() {
           {resumeHighlights.map((item) => (
             <li key={item} className="flex items-start gap-3 text-sm leading-7 text-[var(--muted)] md:text-base">
               <i className="ri-checkbox-circle-fill mt-1 text-[var(--success)]" />
-          title="Download the full background, experience, and project summary."
-          description="If you want the compact version of my work, stack, and project experience, the resume is the fastest path."
-        />
-      </div>
-
-      <article className="resume-panel reveal">
-        <ul className="resume-highlights">
-          {resumeHighlights.map((item) => (
-            <li key={item}>
-              <i className="ri-check-line" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-4">
           <a href={profile.resume} download className="btn-primary">
             Download Resume
           </a>
-        <div className="resume-panel__actions">
-          <a href={profile.resume} download className="button button--primary">
-            Download Resume
-          </a>
-          <a href="#contact" className="button button--ghost">
+          <a href="#contact" className="btn-secondary">
             Discuss a Project
           </a>
         </div>

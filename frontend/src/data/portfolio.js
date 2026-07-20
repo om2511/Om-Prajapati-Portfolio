@@ -44,10 +44,7 @@ export const profile = {
 export const stats = [
   { value: "5", label: "Featured projects" },
   { value: "MERN", label: "Primary delivery stack" },
-  { value: "Render", label: "Deployment workflow" },
-  { value: "4", label: "Portfolio projects shipped" },
-  { value: "MERN", label: "Primary delivery stack" },
-  { value: "API", label: "Mongo-backed contact workflow" }
+  { value: "Render", label: "Deployment workflow" }
 ];
 
 export const focusCards = [
@@ -64,7 +61,7 @@ export const focusCards = [
   {
     title: "Backend reliability",
     description:
-      "I keep APIs and data flow explicit, practical, and maintainable instead of hiding simple logic behind unnecessary abstraction."
+      "I keep APIs and data flow explicit, practical, and maintainable instead of hiding simple logic behind unnecessary abstractions."
   }
 ];
 
@@ -102,7 +99,6 @@ export const projects = [
     image: "/RecipeWala.png",
     githubUrl: "https://github.com/om2511/RecipeWala",
     liveUrl: "https://recipewala.vercel.app/",
-    liveUrl: "",
     highlights: ["React UI", "Node + MongoDB", "Social product flow"]
   },
   {
@@ -113,7 +109,6 @@ export const projects = [
     image: "/PG-Search.png",
     githubUrl: "https://github.com/om2511/pg-search-website/tree/my-branch",
     liveUrl: "https://pg-search-website.vercel.app/",
-    liveUrl: "",
     highlights: ["Authentication", "Search and filters", "Responsive listings"]
   },
   {
@@ -124,7 +119,6 @@ export const projects = [
     image: "/Collab.png",
     githubUrl: "https://github.com/om2511/collaborative-platform",
     liveUrl: "https://collaborative-platform-gamma.vercel.app/",
-    liveUrl: "",
     highlights: ["Project collaboration", "Task flow", "Shared workspace UX"]
   },
   {
@@ -135,7 +129,6 @@ export const projects = [
     image: "/url-short.png",
     githubUrl: "https://github.com/om2511/url_shortner",
     liveUrl: "https://url-shortner-two-opal.vercel.app/",
-    liveUrl: "",
     highlights: ["Utility workflow", "Simple UX", "Fast interaction"]
   }
 ];
@@ -199,8 +192,8 @@ export const socialLinks = [
   {
     label: "LinkedIn",
     icon: "ri-linkedin-box-fill",
-    value: "dev-om-prajapati",
-    href: "https://www.linkedin.com/in/dev-om-prajapati/"
+    value: "om-h-prajapati",
+    href: "https://www.linkedin.com/in/om-h-prajapati/"
   },
   {
     label: "X",

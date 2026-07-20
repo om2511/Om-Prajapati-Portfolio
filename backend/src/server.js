@@ -24,8 +24,13 @@ async function connectToDatabase() {
     return;
   }
 
-  await mongoose.connect(mongoUri);
-  console.log("MongoDB connected");
+  try {
+    await mongoose.connect(mongoUri);
+    console.log("MongoDB connected");
+  } catch (error) {
+    console.warn("MongoDB connection failed:", error.message);
+    console.warn("Contact submissions will fail until a database connection is configured.");
+  }
 }
 
 async function startServer() {

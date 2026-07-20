@@ -99,17 +99,11 @@ body {
   min-width: 320px;
   font-family: "Space Grotesk", sans-serif;
   color: var(--text);
-  background:
+  background-color: var(--bg);
+  background-image:
     radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 30%),
     radial-gradient(circle at top right, rgba(249, 115, 22, 0.12), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent),
-  font-family: "Inter", sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(13, 99, 243, 0.16), transparent 28%),
-    radial-gradient(circle at top right, rgba(249, 115, 22, 0.12), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent),
-    var(--bg);
+    linear-gradient(180deg, var(--surface-border), transparent);
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -168,15 +162,7 @@ body::after {
   strong {
     letter-spacing: -0.02em;
   }
-  inset: auto;
-  width: 32rem;
-  height: 32rem;
-  border-radius: 999px;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(60px);
-  opacity: 0.32;
-}
+
 
 body::before {
   top: -10rem;
@@ -1041,6 +1027,8 @@ body.theme-dark .site-footer__stack a {
   }
   50% {
     transform: translateY(-10px);
+  }
+}
 .social-stack,
 .site-footer__stack {
   display: grid;
@@ -1233,6 +1221,7 @@ body.theme-dark .contact-form textarea {
 @media (max-width: 900px) {
   .mobile-nav {
     background: color-mix(in srgb, var(--nav) 94%, transparent);
+  }
   .site-header__inner {
     grid-template-columns: auto 1fr auto;
     gap: 0.45rem;
