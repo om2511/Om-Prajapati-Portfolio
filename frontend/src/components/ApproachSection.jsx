@@ -18,6 +18,19 @@ export default function ApproachSection() {
             </span>
             <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">{item.title}</h3>
             <p className="mt-3 text-sm leading-7 text-[var(--muted)] md:text-base">{item.description}</p>
+    <section className="section" id="approach">
+      <SectionHeading
+        eyebrow="Approach"
+        title="How I take work from vague idea to usable product."
+        description="My process is direct: clarify the problem, shape the interface, and build the system without unnecessary complexity."
+      />
+
+      <div className="approach-grid">
+        {processSteps.map((item) => (
+          <article key={item.step} className="approach-card reveal">
+            <span className="approach-card__step">{item.step}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
           </article>
         ))}
       </div>

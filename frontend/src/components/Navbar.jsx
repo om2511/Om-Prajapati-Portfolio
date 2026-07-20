@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { navItems, profile } from "../data/portfolio";
+import { navItems } from "../data/portfolio";
 
 export default function Navbar({ activeSection, isDarkTheme, onThemeToggle }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,6 +59,27 @@ export default function Navbar({ activeSection, isDarkTheme, onThemeToggle }) {
             aria-label="Toggle color theme"
           >
             <i className={isDarkTheme ? "ri-sun-line text-lg" : "ri-moon-line text-lg"} />
+        <nav className={`site-nav ${isMenuOpen ? "is-open" : ""}`} aria-label="Primary">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={activeSection === item.id ? "is-active" : ""}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="site-header__controls">
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onThemeToggle}
+            aria-label="Toggle color theme"
+          >
+            <i className={isDarkTheme ? "ri-sun-line" : "ri-moon-line"} />
           </button>
 
           <button
@@ -67,6 +89,11 @@ export default function Navbar({ activeSection, isDarkTheme, onThemeToggle }) {
             onClick={() => setIsMenuOpen((value) => !value)}
           >
             <i className={isMenuOpen ? "ri-close-line text-lg" : "ri-menu-4-line text-lg"} />
+            className="site-nav__toggle"
+            aria-label="Toggle navigation"
+            onClick={() => setIsMenuOpen((value) => !value)}
+          >
+            <i className={isMenuOpen ? "ri-close-line" : "ri-menu-4-line"} />
           </button>
         </div>
       </div>

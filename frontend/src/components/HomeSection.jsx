@@ -59,6 +59,20 @@ export default function HomeSection() {
         <p className="mt-4 max-w-2xl text-base leading-8 text-[var(--muted)] md:text-lg">
           {profile.tagline}
         </p>
+    <section className="hero section" id="home">
+      <div className="hero__copy reveal">
+        <span className="hero__eyebrow">Full Stack Portfolio</span>
+        <p className="hero__availability">
+          <i className="ri-sparkling-2-line" /> {profile.availability}
+        </p>
+        <h1>
+          <span className="hero__name">Om Prajapati</span>
+        </h1>
+        <div className="hero__role-shell" aria-live="polite">
+          <span className={`hero__role ${isVisible ? "is-visible" : ""}`}>{role}</span>
+        </div>
+        <p className="hero__title">{profile.title}</p>
+        <p className="hero__tagline">{profile.tagline}</p>
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a href="#projects" className="btn-primary">
@@ -115,6 +129,9 @@ export default function HomeSection() {
               </p>
             </div>
           </div>
+      <div className="hero__visual reveal">
+        <div className="hero__image-frame">
+          <img src={profile.image} alt={profile.name} />
         </div>
       </div>
     </section>

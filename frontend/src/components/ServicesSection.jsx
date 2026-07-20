@@ -8,12 +8,16 @@ export default function ServicesSection() {
         eyebrow="Services"
         title="Work built around shipping strong product outcomes, not inflated service language."
         description="I focus on the parts that actually matter: interface quality, backend structure, responsive behavior, and maintainable implementation."
+        title="What I can build and improve for you."
+        description="I focus on work where design quality and engineering quality are both visible in the final result."
       />
 
       <div className="grid gap-5 md:grid-cols-3">
         {services.map((service) => (
           <article key={service.title} className="surface-card reveal px-6 py-7 md:px-7 md:py-8">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--accent-soft)] text-xl text-[var(--accent)]">
+          <article key={service.title} className="service-card reveal">
+            <div className="service-card__icon">
               <i className={service.icon} />
             </div>
             <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">{service.title}</h3>
