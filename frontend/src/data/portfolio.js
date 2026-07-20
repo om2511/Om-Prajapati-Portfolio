@@ -16,9 +16,6 @@ export const heroRoles = [
 
 export const profile = {
   name: "Om Prajapati",
-  title: "Full-stack developer building polished interfaces, reliable APIs, and production-ready web experiences.",
-  tagline:
-    "I work across React, Tailwind CSS, Node.js, Express, and MongoDB to ship products that are responsive, maintainable, and built for real use.",
   title: "Full stack developer building clean interfaces, dependable APIs, and product-focused web experiences.",
   tagline:
     "I work across React, Node.js, Express, and MongoDB to deliver products that are responsive, practical, and ready to ship.",
@@ -27,9 +24,6 @@ export const profile = {
   email: "ompra2511@gmail.com",
   phone: "+91 95741 74660",
   location: "Kalol, Gujarat, India",
-  availability: "Open to internships, freelance builds, and product engineering collaborations.",
-  about:
-    "I build web products with a strong focus on clarity, responsive behavior, and maintainable engineering. My best work sits at the intersection of sharp frontend execution and straightforward backend architecture that teams can actually extend.",
   availability: "Available for freelance work, internships, and product-focused collaborations.",
   about:
     "I build web products with a strong bias toward clarity, responsiveness, and maintainable engineering. My work is best when the UI needs to feel intentional and the backend needs to stay reliable under real use.",
@@ -50,7 +44,7 @@ export const profile = {
 export const stats = [
   { value: "5", label: "Featured projects" },
   { value: "MERN", label: "Primary delivery stack" },
-  { value: "Render", label: "Deployment workflow" }
+  { value: "Render", label: "Deployment workflow" },
   { value: "4", label: "Portfolio projects shipped" },
   { value: "MERN", label: "Primary delivery stack" },
   { value: "API", label: "Mongo-backed contact workflow" }
@@ -61,19 +55,16 @@ export const focusCards = [
     title: "Product mindset",
     description:
       "I design around actual user flow, decision clarity, and the kind of interactions that hold up beyond the first demo."
-      "I build around actual user flow, not just isolated sections or pretty screenshots."
   },
   {
     title: "Frontend quality",
     description:
       "I care about hierarchy, spacing, responsiveness, and motion so the UI feels intentional instead of assembled from defaults."
-      "I care about layout polish, responsive behavior, and interfaces that look deliberate."
   },
   {
     title: "Backend reliability",
     description:
       "I keep APIs and data flow explicit, practical, and maintainable instead of hiding simple logic behind unnecessary abstraction."
-      "I keep APIs and data flow simple, explicit, and maintainable instead of overengineered."
   }
 ];
 
@@ -81,7 +72,6 @@ export const stackGroups = [
   {
     title: "Frontend",
     items: ["React", "Tailwind CSS", "JavaScript", "HTML", "Responsive UI"]
-    items: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Responsive UI"]
   },
   {
     title: "Backend",
@@ -189,30 +179,6 @@ export const processSteps = [
     title: "Build the system cleanly",
     description:
       "I connect polished UI with straightforward APIs and data models so the finished product remains maintainable after launch."
-  }
-];
-
-export const resumeHighlights = [
-  "Full-stack development with React, Tailwind CSS, Node.js, Express, and MongoDB",
-  "Responsive interface delivery with reusable component structure and consistent typography",
-export const processSteps = [
-  {
-    step: "01",
-    title: "Clarify the product",
-    description:
-      "I reduce vague requirements into a working page structure, user path, and delivery scope before writing code."
-  },
-  {
-    step: "02",
-    title: "Design for actual use",
-    description:
-      "I focus on hierarchy, readability, motion, and responsiveness so the interface feels like a product instead of a template."
-  },
-  {
-    step: "03",
-    title: "Build the system cleanly",
-    description:
-      "I connect polished UI with straightforward APIs and data models so the product remains maintainable after launch."
   }
 ];
 
