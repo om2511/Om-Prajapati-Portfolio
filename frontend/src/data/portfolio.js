@@ -20,7 +20,7 @@ export const profile = {
   tagline:
     "I work across React, Tailwind CSS, Node.js, Express, and MongoDB to ship products that are responsive, maintainable, and built for real use.",
   image: "/my-img-1.jpg",
-  resume: "/Om Prajapati Resume.pdf",
+  resume: "/Om_Prajapati_Resume_IT.pdf",
   email: "ompra2511@gmail.com",
   phone: "+91 95741 74660",
   location: "Kalol, Gujarat, India",
