@@ -1,4 +1,4 @@
-# Portfolio Monorepo
+# Om Prajapati Portfolio
 
 This repository contains the active React frontend and Express backend for Om Prajapati's portfolio, plus the archived static implementation preserved in `legacy-static/`.
 
@@ -6,10 +6,18 @@ This repository contains the active React frontend and Express backend for Om Pr
 
 - Frontend: React + Vite + Tailwind CSS
 - Backend: Express
-- Database: MongoDB with Mongoose for contact messages
-- Workspace: npm workspaces at the repository root
+- Database: MongoDB with Mongoose
+- Deployment: Render Blueprint
 
-## Structure
+## Highlights
+
+- Responsive portfolio UI with a stronger visual system and motion-driven section reveals
+- Backend-powered contact form with MongoDB persistence
+- Input validation, basic rate limiting, and explicit CORS handling on the API
+- Monorepo workspace structure for frontend and backend development
+- Render-ready deployment configuration through `render.yaml`
+
+## Project Structure
 
 ```text
 frontend/      React portfolio application
@@ -30,17 +38,18 @@ render.yaml    Render Blueprint for deploying frontend and backend on Render
 npm install
 ```
 
-5. Start frontend and backend together:
+4. Start the full stack:
 
 ```bash
 npm run dev
 ```
 
-Frontend runs on `http://127.0.0.1:5173`.
+Default local URLs:
 
-Backend runs on `http://127.0.0.1:5000`.
+- Frontend: `http://127.0.0.1:5173`
+- Backend: `http://127.0.0.1:5000`
 
-The frontend uses the Vite dev proxy for `/api`, so you do not need `VITE_API_BASE_URL` for local development.
+The frontend uses the Vite `/api` proxy locally, so you do not need `VITE_API_BASE_URL` for development.
 
 ## Validation
 
@@ -50,13 +59,13 @@ Build the frontend:
 npm run build
 ```
 
-Check backend health after it starts:
+Check backend health:
 
 ```bash
 npm run health:backend
 ```
 
-Expected health response shape:
+Expected response:
 
 ```json
 {
@@ -79,8 +88,7 @@ This repository includes a Render Blueprint in `render.yaml`.
 
 The intended deployment model is:
 
-1. `frontend/` as a Render Static Site
-2. `backend/` as a Render Web Service
+Required Render environment variables:
 
 Important environment variables:
 

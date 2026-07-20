@@ -73,6 +73,14 @@ export default function ContactSection() {
         <article className="surface-card reveal px-6 py-7 md:px-8 md:py-9">
           <h3 className="text-xl font-semibold tracking-[-0.03em]">Direct Contact</h3>
           <ul className="mt-6 space-y-5">
+        title="Start with a clear project brief."
+        description="Tell me what you are building, what is broken, or what needs improvement. I will get the message through the backend workflow."
+      />
+
+      <div className="contact-grid">
+        <article className="contact-panel reveal">
+          <h3>Direct Contact</h3>
+          <ul className="contact-list">
             <li>
               <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
                 Email
@@ -125,6 +133,10 @@ export default function ContactSection() {
           <div className="grid gap-5 md:grid-cols-2">
             <label className="block">
               <span className="mb-2 block text-sm font-semibold text-[var(--headline)]">Name</span>
+        <form className="contact-form reveal" onSubmit={handleSubmit}>
+          <div className="form-grid">
+            <label>
+              <span>Name</span>
               <input
                 type="text"
                 name="name"

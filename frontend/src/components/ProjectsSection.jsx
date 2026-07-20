@@ -20,12 +20,28 @@ export default function ProjectsSection() {
     return () => window.cancelAnimationFrame(frame);
   }, [showAll]);
 
+  useEffect(() => {
+    if (!showAll) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      document
+        .querySelectorAll("#projects .reveal")
+        .forEach((element) => element.classList.add("is-visible"));
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [showAll]);
+
   return (
     <section className="section-shell" id="projects">
       <SectionHeading
         eyebrow="Selected Work"
         title="Projects that show product thinking, UI discipline, and full-stack execution."
         description="Each project here represents practical work. The goal is not to fill space but to show clear interfaces, usable flows, and deliberate technical delivery."
+        title="Projects built to solve specific product problems."
+        description="These projects show how I approach frontend polish, full-stack flow, and practical feature implementation."
       />
 
       <div className="grid gap-6 lg:grid-cols-2">
