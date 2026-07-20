@@ -24,9 +24,7 @@ export default function App() {
   }, [isDarkTheme]);
 
   useEffect(() => {
-    const elements = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+    const elements = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
     const updateActiveSection = () => {
       const scrollAnchor = window.scrollY + 180;
@@ -94,7 +92,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="app-shell">
+    <div className="min-h-screen">
       <Navbar
         activeSection={activeSection}
         isDarkTheme={isDarkTheme}

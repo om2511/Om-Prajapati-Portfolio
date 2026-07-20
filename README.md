@@ -1,10 +1,10 @@
 # Om Prajapati Portfolio
 
-A full-stack portfolio built with React, Express, and MongoDB. The project is designed to present work clearly, feel polished on every screen size, and handle contact submissions through a real backend instead of client-side hacks.
+This repository contains the active React frontend and Express backend for Om Prajapati's portfolio, plus the archived static implementation preserved in `legacy-static/`.
 
-## Live Stack
+## Stack
 
-- Frontend: React + Vite
+- Frontend: React + Vite + Tailwind CSS
 - Backend: Express
 - Database: MongoDB with Mongoose
 - Deployment: Render Blueprint
@@ -20,17 +20,19 @@ A full-stack portfolio built with React, Express, and MongoDB. The project is de
 ## Project Structure
 
 ```text
-frontend/   React portfolio application
-backend/    Express API and MongoDB models
-projectdocs/ implementation and deployment notes
-render.yaml  Render Blueprint for frontend and backend deployment
+frontend/      React portfolio application
+backend/       Express API and MongoDB models
+legacy-static/ archived HTML/CSS/JS portfolio
+projectdocs/   migration notes and implementation tracking
+render.yaml    Render Blueprint for deploying frontend and backend on Render
 ```
 
 ## Local Development
 
 1. Create a `.env` file in the repository root based on `.env.example`.
-2. Set a valid `MONGODB_URI`.
-3. Install dependencies:
+2. Set a valid `MONGODB_URI` if you want contact submissions to persist.
+3. Make sure MongoDB is actually reachable on that URI before starting the backend.
+4. Install dependencies:
 
 ```bash
 npm install
@@ -72,33 +74,26 @@ Expected response:
 }
 ```
 
-## Contact API
+If MongoDB is not configured, the backend still starts, but `/api/contact` returns a `503` until a database connection is available.
+
+## Contact Flow
 
 The contact form submits to `POST /api/contact`.
 
-The backend:
-
-- validates and normalizes contact input
-- rate limits repeated submissions
-- stores messages in MongoDB
+Messages are stored through the `Contact` Mongoose model when MongoDB is connected.
 
 ## Render Deployment
 
-This repository is configured for Render using `render.yaml`.
+This repository includes a Render Blueprint in `render.yaml`.
 
-Deployment model:
-
-1. `frontend/` as a Static Site
-2. `backend/` as a Web Service
+The intended deployment model is:
 
 Required Render environment variables:
 
-- Backend:
-  - `MONGODB_URI`
-  - `CLIENT_ORIGIN`
-- Frontend:
-  - `VITE_API_BASE_URL`
+Important environment variables:
 
-## Notes
+- Backend: `MONGODB_URI`
+- Backend: `CLIENT_ORIGIN`
+- Frontend: `VITE_API_BASE_URL`
 
-This repository contains project documentation in `projectdocs/` for implementation history and deployment tracking.
+Use the public backend URL as `VITE_API_BASE_URL` and the public frontend URL as `CLIENT_ORIGIN` after Render creates both services.

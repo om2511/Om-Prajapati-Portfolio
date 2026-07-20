@@ -1,7 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", sans-serif;
+}
 
 :root {
   color-scheme: light;
+  --bg: #f5f7fb;
+  --bg-secondary: rgba(255, 255, 255, 0.7);
+  --card: rgba(255, 255, 255, 0.76);
+  --card-strong: #ffffff;
+  --nav: rgba(245, 247, 251, 0.82);
+  --border: rgba(15, 23, 42, 0.1);
+  --border-strong: rgba(15, 23, 42, 0.18);
+  --text: #1f2937;
+  --muted: #5f6b7d;
+  --headline: #0f172a;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+  --accent-alt: #f97316;
+  --success: #0f9d68;
+  --shadow-lg: 0 32px 90px rgba(15, 23, 42, 0.12);
+  --shadow-md: 0 18px 48px rgba(15, 23, 42, 0.08);
   --bg: #f7f4ec;
   --bg-secondary: rgba(255, 255, 255, 0.68);
   --bg-strong: #ffffff;
@@ -26,6 +48,23 @@
 
 body.theme-dark {
   color-scheme: dark;
+  --bg: #07111f;
+  --bg-secondary: rgba(13, 19, 34, 0.84);
+  --card: rgba(15, 23, 42, 0.78);
+  --card-strong: #111b2d;
+  --nav: rgba(7, 17, 31, 0.82);
+  --border: rgba(148, 163, 184, 0.16);
+  --border-strong: rgba(148, 163, 184, 0.24);
+  --text: #d9e2ef;
+  --muted: #99a8bf;
+  --headline: #f8fafc;
+  --accent: #8ab4ff;
+  --accent-strong: #bfd4ff;
+  --accent-soft: rgba(138, 180, 255, 0.12);
+  --accent-alt: #fda76b;
+  --success: #41c78b;
+  --shadow-lg: 0 34px 100px rgba(0, 0, 0, 0.38);
+  --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.3);
   --bg: #0b1019;
   --bg-secondary: rgba(17, 24, 39, 0.84);
   --bg-strong: #151c29;
@@ -58,13 +97,13 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: "Inter", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(13, 99, 243, 0.16), transparent 28%),
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 30%),
     radial-gradient(circle at top right, rgba(249, 115, 22, 0.12), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent),
-    var(--bg);
+    linear-gradient(180deg, var(--surface-border), transparent);
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -72,15 +111,58 @@ body::before,
 body::after {
   content: "";
   position: fixed;
-  inset: auto;
-  width: 32rem;
-  height: 32rem;
+  width: 28rem;
+  height: 28rem;
   border-radius: 999px;
   pointer-events: none;
   z-index: -1;
-  filter: blur(60px);
-  opacity: 0.32;
+  filter: blur(70px);
+  opacity: 0.22;
 }
+
+body::before {
+  top: -8rem;
+  left: -8rem;
+  background: rgba(37, 99, 235, 0.32);
+}
+
+body::after {
+  right: -10rem;
+  top: 18rem;
+  background: rgba(249, 115, 22, 0.2);
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.22);
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--headline);
+    letter-spacing: -0.04em;
+  }
+
+  p,
+  li,
+  span,
+  a,
+  button,
+  input,
+  textarea,
+  label,
+  strong {
+    letter-spacing: -0.02em;
+  }
+
 
 body::before {
   top: -10rem;
@@ -640,12 +722,43 @@ body.theme-dark .approach-card {
   box-shadow: var(--shadow-lg);
 }
 
-.project-card__image {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: #dfe5f1;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
 }
 
+@layer components {
+  .page-shell {
+    width: min(1180px, calc(100% - 2rem));
+    @apply mx-auto pb-10 pt-6 md:pb-14 md:pt-10;
+  }
+
+  .section-shell {
+    @apply py-10 md:py-14;
+  }
+
+  .section-heading-shell {
+    @apply mb-8 max-w-3xl md:mb-10;
+  }
+
+  .section-kicker {
+    @apply inline-flex items-center rounded-full px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.24em];
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--border-strong);
+  }
 body.theme-dark .project-card__image {
   background: #1b2433;
 }
@@ -720,12 +833,48 @@ body.theme-dark .site-footer__stack a {
   margin-top: 1.3rem;
 }
 
-.project-card__status {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
+  .section-copy {
+    color: var(--muted);
+    @apply mt-4 max-w-2xl text-base leading-7 md:text-lg md:leading-8;
+  }
 
+  .surface-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    @apply rounded-[28px] backdrop-blur-xl;
+  }
+
+  .surface-card-strong {
+    background: var(--card-strong);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    @apply rounded-[32px] backdrop-blur-xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition duration-200 md:text-base;
+    background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+    color: #ffffff;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.03);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition duration-200 md:text-base;
+    color: var(--headline);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-strong);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border-strong));
+  }
 .service-card {
   padding: 1.6rem;
 }
@@ -771,11 +920,22 @@ body.theme-dark .site-footer__stack a {
   align-items: start;
 }
 
-.resume-panel {
-  display: grid;
-  gap: 1rem;
-}
+  .btn-small {
+    @apply px-4 py-2 text-sm;
+  }
 
+  .icon-button {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-2xl transition duration-200;
+    color: var(--headline);
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .icon-button:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+  }
 .resume-highlights {
   list-style: none;
   padding: 0;
@@ -801,19 +961,24 @@ body.theme-dark .site-footer__stack a {
   grid-template-columns: 0.9fr 1.1fr;
 }
 
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem;
-  display: grid;
-  gap: 1rem;
-}
+  .form-control {
+    @apply w-full rounded-2xl px-4 py-3 text-base outline-none transition duration-200;
+    color: var(--text);
+    background: color-mix(in srgb, var(--card-strong) 88%, transparent);
+    border: 1px solid var(--border);
+  }
 
-.contact-list li {
-  display: grid;
-  gap: 0.3rem;
-}
+  .form-control:focus {
+    border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 12%, transparent);
+  }
 
+  .pill {
+    @apply inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium;
+    background: color-mix(in srgb, var(--card-strong) 88%, transparent);
+    border: 1px solid var(--border);
+    color: var(--headline);
+  }
 .contact-list span,
 .site-footer__links span {
   color: var(--text-muted);
@@ -823,12 +988,47 @@ body.theme-dark .site-footer__stack a {
   font-weight: 800;
 }
 
-.contact-list a,
-.contact-list strong {
-  color: var(--headline);
-  font-size: 1rem;
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+.hero-role-shell {
+  min-height: 3.4rem;
+}
+
+.hero-role {
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.hero-role.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-orbit {
+  animation: orbit-float 8s ease-in-out infinite;
+}
+
+@keyframes orbit-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 .social-stack,
 .site-footer__stack {
   display: grid;
@@ -1019,6 +1219,9 @@ body.theme-dark .contact-form textarea {
 }
 
 @media (max-width: 900px) {
+  .mobile-nav {
+    background: color-mix(in srgb, var(--nav) 94%, transparent);
+  }
   .site-header__inner {
     grid-template-columns: auto 1fr auto;
     gap: 0.45rem;
